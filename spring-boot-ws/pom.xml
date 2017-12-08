@@ -6,7 +6,7 @@
 
     <artifactId>springboot-ws</artifactId>
     <groupId>com.example</groupId>
-    <name>springboot-ws</name>
+    <name>spring-boot-ws</name>
     <version>0.2.0</version>
 
     <modules>
