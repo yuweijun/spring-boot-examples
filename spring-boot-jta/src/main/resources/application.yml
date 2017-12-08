@@ -1,0 +1,53 @@
+spring:
+  datasource:
+    primary:
+      url: jdbc:mysql://localhost/jta1
+      username: dbuser
+      password: dbpass
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.jdbc.Driver
+      filters: stat
+      maxActive: 20
+      initialSize: 5
+      maxWait: 60000
+      minIdle: 5
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 1
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: false
+    secondary:
+      url: jdbc:mysql://localhost/jta2
+      username: dbuser
+      password: dbpass
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.jdbc.Driver
+      filters: stat
+      maxActive: 20
+      initialSize: 5
+      maxWait: 60000
+      minIdle: 5
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 1
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: false
+  jpa:
+    showSql: true
+    hibernate:
+      ddlAuto: none
+    properties:
+      hibernate:
+        format_sql: true
+logging:
+  level:
+    root: WARN
+  com:
+    example:
+      spring:
+        jdbc:
+          mapper: TRACE

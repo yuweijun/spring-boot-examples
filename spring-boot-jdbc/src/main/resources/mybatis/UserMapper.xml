@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.spring.jdbc.mapper.UserMapper">
+    <!--
+        在select标签中编写查询的SQL语句， 设置select标签的id属性为getUser，id属性值必须是唯一的，
+        不能够重复使用parameterType属性指明查询时使用的参数类型，resultType属性指明查询返回的结果集类型
+        resultType="com.example.spring.jdbc.model.User"就表示将查询结果封装成一个User类的对象返回
+        User类就是users表所对应的实体类
+    -->
+
+    <!--
+        命名解析：为了减少输入量，MyBatis 对所有的命名配置元素（包括语句，结果映射，缓存等）使用了如下的命名解析规则。
+        完全限定名（比如“com.mypackage.MyMapper.selectAllThings”）将被直接查找并且找到即用。
+        短名称（比如“selectAllThings”）如果全局唯一也可以作为一个单独的引用。如果不唯一，有两个或两个以上的相同名称
+        （比如“com.foo.selectAllThings ”和“com.bar.selectAllThings”），那么使用时就会收到错误报告说短名称是不唯一的，这种情况下就必须使用完全限定名。
+
+        根据id查询得到一个user对象
+     -->
+    <select id="getById" parameterType="int" resultType="com.example.spring.jdbc.model.User">
+        select * from user where id=#{id}
+    </select>
+
+</mapper>
