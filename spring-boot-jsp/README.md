@@ -36,3 +36,7 @@ No message available
     
 还是不能解析jsp抛出错误，则把上面依赖中的`<scope>provided</scope>`删除掉。
     
+# References
+
+1. [spring-boot-sample-web-jsp](https://github.com/spring-projects/spring-boot/tree/v1.5.9.RELEASE/spring-boot-samples/spring-boot-sample-web-jsp)    
+    
