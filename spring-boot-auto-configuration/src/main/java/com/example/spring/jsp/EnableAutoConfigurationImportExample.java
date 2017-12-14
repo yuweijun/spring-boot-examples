@@ -24,6 +24,10 @@ public class EnableAutoConfigurationImportExample implements DeferredImportSelec
         this.classLoader = classLoader;
     }
 
+    /**
+     * Select and return the names of which class(es) should be imported
+     * based on the AnnotationMetadata of the importing Configuration class.
+     */
     @Override
     public String[] selectImports(AnnotationMetadata importingClassMetadata) {
         List<String> beanNames = SpringFactoriesLoader.loadFactoryNames(EnableAutoConfiguration.class, classLoader);

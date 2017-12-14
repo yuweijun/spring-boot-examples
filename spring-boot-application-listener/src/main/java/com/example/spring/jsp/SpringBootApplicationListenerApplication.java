@@ -8,7 +8,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
 import org.springframework.boot.web.servlet.ErrorPage;
-import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 
@@ -19,7 +18,6 @@ import java.util.concurrent.TimeUnit;
  * @author yuweijun 2017-12-07
  */
 @SpringBootApplication
-@ServletComponentScan
 public class SpringBootApplicationListenerApplication {
 
     public static void main(String[] args) {
