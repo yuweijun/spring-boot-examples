@@ -13,7 +13,7 @@ import java.util.jar.JarFile;
  */
 public class PrintClassesFromJar {
 
-    public static void main(String[] args) throws IOException {
+    public static void mainTest(String[] args) throws IOException {
         String home = System.getProperty("user.home");
         String pathToJar = home + "/.m2/repository/com/google/guava/guava/19.0/guava-19.0.jar";
         JarFile jarFile = new JarFile(pathToJar);

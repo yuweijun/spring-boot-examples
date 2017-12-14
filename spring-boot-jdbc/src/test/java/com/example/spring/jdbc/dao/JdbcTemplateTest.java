@@ -159,6 +159,7 @@ public class JdbcTemplateTest {
     }
 
     @Test
+    @Ignore
     public void testResultSet3() {
         jdbcTemplate.update("insert into test(name) values('name5')");
         String listSql = "select * from test";

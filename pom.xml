@@ -19,6 +19,7 @@
         <module>spring-boot-cas-client</module>
         <module>spring-boot-jdbc</module>
         <module>spring-boot-jersey</module>
+        <module>spring-boot-info</module>
         <module>spring-boot-jsp</module>
         <module>spring-boot-jta</module>
         <module>spring-boot-shiro</module>
@@ -28,6 +29,7 @@
         <module>spring-shiro-cas</module>
         <module>spring-session</module>
         <module>spring-boot-ws</module>
+        <module>spring-boot-auto-configuration</module>
     </modules>
 
     <properties>

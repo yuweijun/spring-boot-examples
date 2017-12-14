@@ -34,7 +34,7 @@ public class FindClassesFromJar {
         return listofClasses;
     }
 
-    public static void main(String[] args) {
+    public static void mainTest(String[] args) {
         String home = System.getProperty("user.home");
         String pathToJar = home + "/.m2/repository/org/springframework/spring-beans/4.2.0.RELEASE/spring-beans-4.2.0.RELEASE.jar";
         List<String> myList = getClassNamesFromJar(pathToJar);

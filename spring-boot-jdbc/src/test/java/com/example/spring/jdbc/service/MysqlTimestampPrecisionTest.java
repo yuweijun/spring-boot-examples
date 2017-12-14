@@ -2,6 +2,7 @@ package com.example.spring.jdbc.service;
 
 import com.example.spring.jdbc.SpringJdbcApplication;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -41,6 +42,7 @@ import java.util.Date;
 @SpringApplicationConfiguration(SpringJdbcApplication.class)
 @WebIntegrationTest(randomPort = true)
 @Transactional
+@Ignore
 public class MysqlTimestampPrecisionTest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MysqlTimestampPrecisionTest.class);

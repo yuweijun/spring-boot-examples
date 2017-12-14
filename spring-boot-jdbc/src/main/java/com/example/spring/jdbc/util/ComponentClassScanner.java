@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public class ComponentClassScanner  {
 
-    public static void main(String[] args) {
+    public static void mainTest(String[] args) {
         ClassPathScanningCandidateComponentProvider provider =
                 new ClassPathScanningCandidateComponentProvider(true);
         String basePackage = "com/example";
