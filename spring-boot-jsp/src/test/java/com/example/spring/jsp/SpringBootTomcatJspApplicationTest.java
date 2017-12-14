@@ -14,6 +14,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
+ * 使用 @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT) 进行
+ * 测试时,你可以通过 @LocalServerPort 注解将实际端口注入到字段中
+ * <p>
  * Created by yuweijun on 2017-12-08.
  */
 @RunWith(SpringRunner.class)
