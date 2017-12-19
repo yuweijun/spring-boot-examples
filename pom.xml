@@ -30,6 +30,7 @@
         <module>spring-session</module>
         <module>spring-boot-ws</module>
         <module>spring-boot-auto-configuration</module>
+        <module>spring-boot-loader-debug</module>
     </modules>
 
     <properties>
