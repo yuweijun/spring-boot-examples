@@ -26,3 +26,9 @@
 	  at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
 	  at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
 	  at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+
+## debug from vscode
+
+	$ java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -jar target/spring-boot-loader-debug.jar
+
+在vscode中在`SpringBootLoaderDebugApplication`类main方法中打上断点，在vscode中按F5，并attach到端口8000上，程序运行后会进入断点。
