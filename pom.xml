@@ -32,6 +32,7 @@
         <module>spring-boot-auto-configuration</module>
         <module>spring-boot-loader-debug</module>
         <module>spring-boot-log4j2</module>
+        <module>spring-boot-freemarker</module>
     </modules>
 
     <properties>
