@@ -1,4 +1,4 @@
-## start mongodb server in localhost at default port
+## start mongodb server in localhost:27017
 
     $ brew services start mongodb
     
