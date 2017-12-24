@@ -1,1 +1,1 @@
-org.springframework.context.ApplicationListener=com.example.spring.jsp.listener.SpringFactoriesListener
+org.springframework.context.ApplicationListener=com.example.spring.boot.listener.SpringFactoriesListener

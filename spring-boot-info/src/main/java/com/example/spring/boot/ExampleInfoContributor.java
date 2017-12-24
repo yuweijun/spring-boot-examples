@@ -1,4 +1,4 @@
-package com.example.spring.jsp;
+package com.example.spring.boot;
 
 import org.springframework.boot.actuate.info.Info;
 import org.springframework.boot.actuate.info.InfoContributor;

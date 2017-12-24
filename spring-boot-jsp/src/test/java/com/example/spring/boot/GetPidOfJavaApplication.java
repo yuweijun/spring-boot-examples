@@ -1,4 +1,4 @@
-package com.example.spring.jsp;
+package com.example.spring.boot;
 
 import org.junit.Test;
 

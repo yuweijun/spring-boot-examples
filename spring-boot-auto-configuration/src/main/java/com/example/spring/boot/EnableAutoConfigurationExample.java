@@ -1,4 +1,4 @@
-package com.example.spring.jsp;
+package com.example.spring.boot;
 
 import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.context.annotation.Import;

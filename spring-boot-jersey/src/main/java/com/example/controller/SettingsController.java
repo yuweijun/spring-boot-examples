@@ -41,7 +41,7 @@ public class SettingsController {
 	String index(ServletRequest request) {
 		// 如果返回的模板名称不冲突，jspViewResolver和mustacheViewResolver可以同时存在
 		logger.debug("使用jspViewResolver");
-		return "jsp/index";
+		return "boot/index";
 	}
 
 	@RequestMapping(value = "/mustache")

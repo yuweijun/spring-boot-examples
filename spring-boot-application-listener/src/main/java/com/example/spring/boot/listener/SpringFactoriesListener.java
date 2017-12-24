@@ -1,4 +1,4 @@
-package com.example.spring.jsp.listener;
+package com.example.spring.boot.listener;
 
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;

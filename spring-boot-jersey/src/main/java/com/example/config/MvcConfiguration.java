@@ -57,9 +57,9 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
      */
     public EmbeddedServletContainerCustomizer containerCustomizer() {
         return (container -> {
-            ErrorPage error401 = new ErrorPage(HttpStatus.UNAUTHORIZED, "/401.jsp");
-            ErrorPage error404 = new ErrorPage(HttpStatus.NOT_FOUND, "/404.jsp");
-            ErrorPage error500 = new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/500.jsp");
+            ErrorPage error401 = new ErrorPage(HttpStatus.UNAUTHORIZED, "/401.boot");
+            ErrorPage error404 = new ErrorPage(HttpStatus.NOT_FOUND, "/404.boot");
+            ErrorPage error500 = new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/500.boot");
             container.addErrorPages(error401, error404, error500);
         });
     }
@@ -72,7 +72,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/login").setViewName("jsp/login");
+        registry.addViewController("/login").setViewName("boot/login");
     }
 
     @Bean(name = "jspViewResolver")
@@ -80,7 +80,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
         logger.info("jspViewResolver");
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".jsp");
+        viewResolver.setSuffix(".boot");
         return viewResolver;
     }
 

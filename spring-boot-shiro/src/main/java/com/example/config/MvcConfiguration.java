@@ -50,8 +50,8 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 	@Bean
 	public ViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		viewResolver.setPrefix("/WEB-INF/views/jsp/");
-		viewResolver.setSuffix(".jsp");
+		viewResolver.setPrefix("/WEB-INF/views/boot/");
+		viewResolver.setSuffix(".boot");
 		return viewResolver;
 	}
 

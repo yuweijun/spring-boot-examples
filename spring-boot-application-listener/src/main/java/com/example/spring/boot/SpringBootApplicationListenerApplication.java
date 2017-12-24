@@ -1,6 +1,6 @@
-package com.example.spring.jsp;
+package com.example.spring.boot;
 
-import com.example.spring.jsp.listener.ExampleListener;
+import com.example.spring.boot.listener.ExampleListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

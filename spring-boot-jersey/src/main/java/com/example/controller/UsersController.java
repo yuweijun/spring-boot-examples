@@ -37,7 +37,7 @@ public class UsersController {
 				logger.debug("current user ROLE is: " + authority.getAuthority());
 			}
 		}
-		return new ModelAndView("jsp/users", "users", userService.findAll());
+		return new ModelAndView("boot/users", "users", userService.findAll());
 	}
 
 }
