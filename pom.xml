@@ -36,6 +36,7 @@
         <module>spring-boot-mongodb</module>
         <module>spring-boot-batch</module>
         <module>spring-boot-rest</module>
+        <module>spring-boot-security</module>
         <module>spring-boot-devtools</module>
     </modules>
 
