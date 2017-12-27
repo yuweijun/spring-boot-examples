@@ -80,7 +80,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
         logger.info("jspViewResolver");
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".boot");
+        viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
 
