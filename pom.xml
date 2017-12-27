@@ -35,6 +35,7 @@
         <module>spring-boot-freemarker</module>
         <module>spring-boot-mongodb</module>
         <module>spring-boot-batch</module>
+        <module>spring-boot-mvc</module>
         <module>spring-boot-war</module>
         <module>spring-boot-rest</module>
         <module>spring-boot-security</module>
