@@ -29,6 +29,8 @@ spring:
     url: jdbc:mysql://localhost/test?characterEncoding=utf8&useSSL=true
     username: dbuser
     password: dbpass
+    tomcat:
+      max-active: 20
     # driver-class: com.mysql.jdbc.Driver
   jpa:
     showSql: true

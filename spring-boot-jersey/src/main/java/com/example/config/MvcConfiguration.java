@@ -72,7 +72,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/login").setViewName("boot/login");
+        registry.addViewController("/login").setViewName("jsp/login");
     }
 
     @Bean(name = "jspViewResolver")

@@ -22,9 +22,9 @@ import java.util.Arrays;
  *
  */
 @SpringBootApplication
-public class SpringBootExampleApplication implements CommandLineRunner {
+public class SpringBootJerseyApplication implements CommandLineRunner {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(SpringBootExampleApplication.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(SpringBootJerseyApplication.class);
 
 	/**
 	 * 
@@ -48,7 +48,7 @@ public class SpringBootExampleApplication implements CommandLineRunner {
 	}
 
 	public static void main(String[] args) throws Exception {
-		ApplicationContext ctx = SpringApplication.run(SpringBootExampleApplication.class, args);
+		ApplicationContext ctx = SpringApplication.run(SpringBootJerseyApplication.class, args);
 		String[] beanNames = ctx.getBeanDefinitionNames();
 		LOGGER.info("bean sizes is: " + beanNames.length);
 		// Arrays.sort(beanNames);

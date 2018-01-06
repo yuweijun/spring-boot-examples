@@ -42,13 +42,13 @@ public class UserController {
 			UserDetails currentUser = (UserDetails) authentication.getPrincipal();
 			logger.debug("currentUser username is: " + currentUser.getUsername());
 		}
-		return new ModelAndView("boot/user", "user", userService.getUserById(id));
+		return new ModelAndView("jsp/user", "user", userService.getUserById(id));
 	}
 
 	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public ModelAndView getUserCreatePage() {
-		return new ModelAndView("boot/user_create", "form", new UserCreateForm());
+		return new ModelAndView("jsp/user_create", "form", new UserCreateForm());
 	}
 
 	@PreAuthorize("hasAuthority('ADMIN')")
@@ -57,14 +57,14 @@ public class UserController {
 			BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
 			logger.debug("errors size is: " + bindingResult.getErrorCount());
-			return "boot/user_create";
+			return "jsp/user_create";
 		}
 		try {
 			// userService.create(form);
 			userService.createInNewTransaction(form);
 		} catch (DataIntegrityViolationException e) {
 			bindingResult.reject("error", "DataIntegrityViolationException thrown");
-			return "boot/user_create";
+			return "jsp/user_create";
 		}
 		return "redirect:/users";
 	}

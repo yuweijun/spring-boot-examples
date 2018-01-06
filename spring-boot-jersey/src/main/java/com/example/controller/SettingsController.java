@@ -1,12 +1,6 @@
 package com.example.controller;
 
-import java.util.Locale;
-
-import javax.servlet.ServletRequest;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
+import com.example.config.MvcConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +14,11 @@ import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
-import com.example.config.MvcConfiguration;
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.util.Locale;
 
 @Controller
 @RequestMapping("/settings")
@@ -41,7 +39,7 @@ public class SettingsController {
 	String index(ServletRequest request) {
 		// 如果返回的模板名称不冲突，jspViewResolver和mustacheViewResolver可以同时存在
 		logger.debug("使用jspViewResolver");
-		return "boot/index";
+		return "jsp/index";
 	}
 
 	@RequestMapping(value = "/mustache")
