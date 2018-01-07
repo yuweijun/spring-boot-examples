@@ -26,7 +26,6 @@ public class PeopleJpaServiceBeanPostProcessor implements BeanPostProcessor {
             LOGGER.info("special postProcessAfterInitialization actions for bean : {}", bean);
         }
 
-        LOGGER.debug("spring bean : {} .........................................", String.format("%-150s", beanName));
         return bean;
     }
 

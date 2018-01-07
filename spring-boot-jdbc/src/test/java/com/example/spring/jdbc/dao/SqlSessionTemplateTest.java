@@ -2,7 +2,7 @@ package com.example.spring.jdbc.dao;
 
 import com.example.spring.jdbc.mapper.UserMapper;
 import com.example.spring.jdbc.model.User;
-import com.example.spring.jdbc.test.util.SpringBootTransactionalTest;
+import com.example.spring.jdbc.util.SpringBootTransactionalTest;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import org.junit.runner.RunWith;

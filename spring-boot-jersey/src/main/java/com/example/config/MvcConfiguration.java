@@ -75,9 +75,8 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
         registry.addViewController("/login").setViewName("jsp/login");
     }
 
-    @Bean(name = "jspViewResolver")
-    public ViewResolver jspViewResolver() {
-        logger.info("jspViewResolver");
+    @Bean
+    public ViewResolver defaultViewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setPrefix("/WEB-INF/views/");
         viewResolver.setSuffix(".jsp");

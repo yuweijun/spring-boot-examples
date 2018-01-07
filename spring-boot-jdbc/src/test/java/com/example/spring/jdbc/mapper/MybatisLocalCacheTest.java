@@ -1,7 +1,7 @@
 package com.example.spring.jdbc.mapper;
 
 import com.example.spring.jdbc.model.User;
-import com.example.spring.jdbc.test.util.SpringBootTransactionalTest;
+import com.example.spring.jdbc.util.SpringBootTransactionalTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

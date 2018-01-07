@@ -1,10 +1,9 @@
 package com.example.spring.jdbc.jta;
 
-import com.example.spring.jdbc.SpringJdbcApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.naming.NamingException;
@@ -17,7 +16,7 @@ import java.sql.Statement;
  * @author yuweijun 2017-01-19
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(SpringJdbcApplication.class)
+@SpringBootTest
 public class JdbcRollbackTest {
 
     @Autowired

@@ -1,7 +1,7 @@
 package com.example.spring.jdbc.dao;
 
 import com.example.spring.jdbc.model.User;
-import com.example.spring.jdbc.test.util.SpringBootTransactionalTest;
+import com.example.spring.jdbc.util.SpringBootTransactionalTest;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.After;

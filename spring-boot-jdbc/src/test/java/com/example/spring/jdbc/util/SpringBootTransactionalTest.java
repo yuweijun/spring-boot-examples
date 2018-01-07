@@ -1,8 +1,6 @@
-package com.example.spring.jdbc.test.util;
+package com.example.spring.jdbc.util;
 
-import com.example.spring.jdbc.SpringJdbcApplication;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.lang.annotation.ElementType;
@@ -43,9 +41,7 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@SpringApplicationConfiguration(SpringJdbcApplication.class)
-@WebIntegrationTest(randomPort = true)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Transactional
-//@ActiveProfiles("development")
 public @interface SpringBootTransactionalTest {
 }

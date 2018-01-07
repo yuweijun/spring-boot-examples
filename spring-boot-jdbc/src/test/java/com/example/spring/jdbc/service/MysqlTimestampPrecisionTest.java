@@ -1,15 +1,12 @@
 package com.example.spring.jdbc.service;
 
-import com.example.spring.jdbc.SpringJdbcApplication;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,10 +36,8 @@ import java.util.Date;
  * @author yuweijun 2016-07-09.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(SpringJdbcApplication.class)
-@WebIntegrationTest(randomPort = true)
+@SpringBootTest
 @Transactional
-@Ignore
 public class MysqlTimestampPrecisionTest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MysqlTimestampPrecisionTest.class);

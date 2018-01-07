@@ -1,7 +1,7 @@
 package com.example.spring.jdbc.service;
 
 import com.example.spring.jdbc.model.People;
-import com.example.spring.jdbc.test.util.SpringBootTransactionalTest;
+import com.example.spring.jdbc.util.SpringBootTransactionalTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
