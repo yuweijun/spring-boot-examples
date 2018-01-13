@@ -78,17 +78,17 @@ public class RedissonLockController {
         lock.unlock();
 
         ExecutorService executor = Executors.newFixedThreadPool(10);
-        AtomicInteger counter = new AtomicInteger();
+        AtomicInteger counter = new AtomicInteger(1);
         for (int i = 0; i < 10; i++) {
             executor.submit(() -> {
                 for (int j = 0; j < 5; j++) {
-                    lock.lock(2, TimeUnit.SECONDS);
+                    // lock.lock(2, TimeUnit.SECONDS);
+                    lock.lock();
                     try {
                         int nextValue = counter.get() + 1;
                         LOGGER.info("counter is : {}", counter);
                         Thread.sleep(1000);
                         counter.set(nextValue);
-                        lock.unlock();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } finally {
