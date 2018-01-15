@@ -53,14 +53,23 @@ public class DefaultAdvisorAutoProxyCreatorConfig {
     }
 
     /**
+     * RegexpMethodPointcutAdvisor：需要加上完整的类名和方法名，例如：com.example.ClassName.methodName或com.*.methodName或.*methodName。
+     * NameMatchMethodPointcutAdvisor：只需要方法名methodName，不用加类名。
+     */
+    @Bean
+    public RegexpMethodPointcutAdvisor regexpMethodPointcutAdvisor(BusinessInterceptor businessInterceptor) {
+        RegexpMethodPointcutAdvisor regexpMethodPointcutAdvisor = new RegexpMethodPointcutAdvisor();
+        regexpMethodPointcutAdvisor.setPattern(".*do.*");
+        regexpMethodPointcutAdvisor.setAdvice(businessInterceptor);
+        return regexpMethodPointcutAdvisor;
+    }
+
+    /**
      * DefaultAdvisorAutoProxyCreator将扫描上下文，
      * 寻找所有的Advistor(一个Advisor是一个切入点和一个通知的组成) ，
      * 将这些Advisor应用到所有符合切入点的Bean中。
-     *
+     * <p>
      * {@link org.springframework.aop.support.RegexpMethodPointcutAdvisor }
-     *
-     * @param beforeAdviceExample
-     * @return
      */
     @Bean
     public NameMatchMethodPointcutAdvisor nameMatchMethodPointcutAdvisor(BeforeAdviceExample beforeAdviceExample) {
