@@ -14,5 +14,5 @@ public class BusinessImplV1 implements BusinessInterface {
     public void doSomething() {
         LOGGER.info(this.getClass().getCanonicalName());
     }
-
+    public static String KEY = "test";
 }
