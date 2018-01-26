@@ -1,3 +1,4 @@
+security.user.password: password
 spring:
   jpa:
     showSql: true
