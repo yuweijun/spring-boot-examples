@@ -8,5 +8,11 @@
 </head>
 <body>
 <h1>${hello}</h1>
+
+<h2>map is </h2>
+<h3>${map}</h3>
+
+<h2>time is </h2>
+<h3>${time}</h3>
 </body>
 </html>

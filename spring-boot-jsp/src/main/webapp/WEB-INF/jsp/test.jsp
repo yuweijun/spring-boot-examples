@@ -8,5 +8,8 @@
 </head>
 <body>
 <h1>${hello} in test.jsp</h1>
+
+<h2>map is </h2>
+<h3>${map}</h3>
 </body>
 </html>

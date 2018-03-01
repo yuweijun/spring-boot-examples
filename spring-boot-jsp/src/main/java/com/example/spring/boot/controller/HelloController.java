@@ -2,7 +2,12 @@ package com.example.spring.boot.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * {@link org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter RequestMappingHandlerAdapter}
@@ -13,15 +18,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
 
     @RequestMapping("/hello")
-    public String index(Model model) {
+    public String index(@ModelAttribute("time") String time, Model model) {
+        System.out.println("index");
+        System.out.println("time is " + time);
         model.addAttribute("hello", "yu");
         return "index";
     }
 
     @RequestMapping("/test")
     public String testNullView(Model model) {
+        System.out.println("testNullView");
         model.addAttribute("hello", "test");
         return null;
+    }
+
+    @ModelAttribute
+    public Map<String, Integer> method1() {
+        System.out.println("method1");
+        Map<String, Integer> map = new HashMap<>();
+        map.put("test", 1);
+        return map;
     }
 
 }
