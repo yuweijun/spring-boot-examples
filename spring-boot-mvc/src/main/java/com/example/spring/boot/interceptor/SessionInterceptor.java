@@ -60,6 +60,8 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
         LOGGER.info(request.getRequestURI());
         if (request.getRequestURI().equals("/login")) {
             return true;
+        } else if (request.getRequestURI().equals("/error")) {
+            return true;
         } else {
             return login(request, response, handler);
         }
