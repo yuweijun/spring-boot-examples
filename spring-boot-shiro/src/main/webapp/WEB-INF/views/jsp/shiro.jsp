@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<h2>用户名密码为: casuser/Mellon</h2>
 <c:url value="/login" var="loginUrl"/>
 
 <form action="${loginUrl}" method="post">       
