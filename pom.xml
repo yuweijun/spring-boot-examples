@@ -28,7 +28,6 @@
         <module>spring-boot-websocket</module>
         <module>spring-shiro-cas</module>
         <module>spring-session</module>
-        <module>spring-boot-ws</module>
         <module>spring-boot-auto-configuration</module>
         <module>spring-boot-loader-debug</module>
         <module>spring-boot-log4j2</module>
@@ -40,7 +39,7 @@
         <module>spring-boot-war</module>
         <module>spring-boot-rest</module>
         <module>spring-boot-security</module>
-        <module>spring-boot-devtools</module>
+        <module>spring-boot-dev-tools</module>
         <module>spring-aop</module>
     </modules>
 

@@ -25,7 +25,6 @@ public class MessageController {
             sessionVar = new Date();
             session.setAttribute("var", sessionVar);
         }
-        System.out.println("test");
         ModelMap model = new ModelMap("message", Message.MESSAGE).addAttribute("sessionVar", sessionVar);
         return new ModelAndView("hello", model);
     }
