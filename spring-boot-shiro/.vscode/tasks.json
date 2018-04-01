@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "mvn debug sprint boo shiro",
+            "type": "shell",
+            "command": "MAVEN_OPTS='-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n' mvn -B spring-boot:run",
+            "group": "build"
+        }
+    ]
+}
