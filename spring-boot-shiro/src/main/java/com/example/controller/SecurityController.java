@@ -38,7 +38,7 @@ public class SecurityController {
     @PostMapping("/login")
     public String login(@Valid User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
-            return "login";
+            return "shiro";
         }
         String loginName = user.getUsername();
         logger.info("准备登陆用户 => {}", loginName);
@@ -75,7 +75,7 @@ public class SecurityController {
             return "redirect:/index";
         } else {
             token.clear();
-            return "login";
+            return "shiro";
         }
     }
 

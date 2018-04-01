@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "spring-boot-application-listener"
+		},
+		{
+			"path": "spring-boot-dev-tools"
+		},
+		{
+			"path": "spring-boot-jsp"
+		},
+		{
+			"path": "spring-boot-mvc"
+		},
+		{
+			"path": "spring-boot-security"
+		},
+		{
+			"path": "spring-boot-shiro"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}

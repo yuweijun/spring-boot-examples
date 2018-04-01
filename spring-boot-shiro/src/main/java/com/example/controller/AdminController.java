@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/admin")
 public class AdminController {
 
-	@RequestMapping("/")
+	@RequestMapping({"", "/"})
 	@ResponseBody
 	String index() {
 		return "Admin Index Page!";
