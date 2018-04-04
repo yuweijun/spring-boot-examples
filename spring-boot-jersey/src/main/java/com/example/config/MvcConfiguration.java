@@ -52,14 +52,13 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 
     /**
      * 如果需要像传统web.xml那样配置404页面的话, 需要将下面这个Bean注入到spring中
-     * <p>
      * // @Bean
      */
     public EmbeddedServletContainerCustomizer containerCustomizer() {
         return (container -> {
-            ErrorPage error401 = new ErrorPage(HttpStatus.UNAUTHORIZED, "/401.boot");
-            ErrorPage error404 = new ErrorPage(HttpStatus.NOT_FOUND, "/404.boot");
-            ErrorPage error500 = new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/500.boot");
+            ErrorPage error401 = new ErrorPage(HttpStatus.UNAUTHORIZED, "/401.jsp");
+            ErrorPage error404 = new ErrorPage(HttpStatus.NOT_FOUND, "/404.jsp");
+            ErrorPage error500 = new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/500.jsp");
             container.addErrorPages(error401, error404, error500);
         });
     }
