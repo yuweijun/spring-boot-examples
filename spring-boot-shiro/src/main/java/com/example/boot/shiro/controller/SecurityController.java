@@ -1,8 +1,8 @@
-package com.example.controller;
+package com.example.boot.shiro.controller;
 
 import javax.validation.Valid;
 
-import com.example.model.User;
+import com.example.boot.shiro.model.User;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;

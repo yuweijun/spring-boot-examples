@@ -1,9 +1,9 @@
-package com.example.config;
+package com.example.boot.shiro.config;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import com.example.realm.UserRealm;
+import com.example.boot.shiro.realm.UserRealm;
 
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.cache.CacheManager;

@@ -1,4 +1,4 @@
-package com.example.config;
+package com.example.boot.shiro.config;
 
 import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Bean;

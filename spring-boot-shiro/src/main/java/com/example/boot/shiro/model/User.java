@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.boot.shiro.model;
 
 import java.io.Serializable;
 

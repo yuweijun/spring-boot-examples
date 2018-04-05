@@ -1,9 +1,10 @@
-package com.example.service;
-
-import com.example.model.User;
-import org.springframework.stereotype.Service;
+package com.example.boot.shiro.service;
 
 import java.util.Collection;
+
+import com.example.boot.shiro.model.User;
+
+import org.springframework.stereotype.Service;
 
 @Service
 public interface UserService {

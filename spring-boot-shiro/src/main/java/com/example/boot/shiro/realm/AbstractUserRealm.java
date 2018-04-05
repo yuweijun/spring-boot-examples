@@ -1,10 +1,10 @@
-package com.example.realm;
+package com.example.boot.shiro.realm;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import com.example.model.User;
-import com.example.repository.UserRepository;
+import com.example.boot.shiro.model.User;
+import com.example.boot.shiro.repository.UserRepository;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;

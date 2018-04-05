@@ -1,9 +1,9 @@
-package com.example.service;
+package com.example.boot.shiro.service;
 
 import java.util.Collection;
 
-import com.example.model.User;
-import com.example.repository.UserRepository;
+import com.example.boot.shiro.model.User;
+import com.example.boot.shiro.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;

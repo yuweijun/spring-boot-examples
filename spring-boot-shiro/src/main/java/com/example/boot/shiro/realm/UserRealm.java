@@ -1,9 +1,9 @@
-package com.example.realm;
+package com.example.boot.shiro.realm;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import com.example.model.User;
+import com.example.boot.shiro.model.User;
 
 import org.springframework.stereotype.Component;
 

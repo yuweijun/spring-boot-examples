@@ -1,24 +1,24 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "java",
-            "name": "BootShiroApplication<spring-boot-shiro>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "com.example.BootShiroApplication",
-            "projectName": "spring-boot-shiro",
-            "args": ""
-        },
-        {
-            "type": "java",
-            "name": "Debug (Attach)",
-            "request": "attach",
-            "projectName": "sprint-boot-shiro",
-            "hostName": "localhost",
-            "port": 8000
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "BootShiroApplication",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "stopOnEntry": false,
+      "mainClass": "com.example.boot.shiro.BootShiroApplication",
+      "projectName": "spring-boot-shiro",
+      "args": ""
+    },
+    {
+      "type": "java",
+      "name": "Debug Attach BootShiroApplication",
+      "request": "attach",
+      "projectName": "sprint-boot-shiro",
+      "hostName": "localhost",
+      "port": 8000
+    }
+  ]
 }

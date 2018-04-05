@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.boot.shiro.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
