@@ -3,10 +3,12 @@ package com.example.spring.boot.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.example.spring.boot.dto.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * {@link org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter RequestMappingHandlerAdapter}
@@ -29,6 +31,15 @@ public class HelloController {
         System.out.println("testNullView");
         model.addAttribute("hello", "test");
         return null;
+    }
+
+    @RequestMapping("/json")
+    @ResponseBody
+    public User user() {
+        User user = new User();
+        user.setId(1);
+        user.setName("test");
+        return user;
     }
 
     @ModelAttribute
