@@ -20,32 +20,33 @@
     </properties>
 
     <modules>
+        <module>spring-aop</module>
         <module>spring-boot-application-listener</module>
+        <module>spring-boot-auto-configuration</module>
+        <module>spring-boot-batch</module>
         <module>spring-boot-cas-client</module>
+        <module>spring-boot-dev-tools</module>
+        <module>spring-boot-freemarker</module>
+        <module>spring-boot-info</module>
         <module>spring-boot-jdbc</module>
         <module>spring-boot-jersey</module>
-        <module>spring-boot-info</module>
         <module>spring-boot-jsp</module>
         <module>spring-boot-jta</module>
+        <module>spring-boot-loader-debug</module>
+        <module>spring-boot-log4j2</module>
+        <module>spring-boot-messaging-redis</module>
+        <module>spring-boot-mongodb</module>
+        <module>spring-boot-mvc</module>
+        <module>spring-boot-redis</module>
+        <module>spring-boot-rest</module>
+        <module>spring-boot-security</module>
         <module>spring-boot-shiro</module>
         <module>spring-boot-swagger</module>
         <module>spring-boot-thrift</module>
-        <module>spring-boot-websocket</module>
-        <module>spring-shiro-cas</module>
-        <module>spring-session</module>
-        <module>spring-boot-auto-configuration</module>
-        <module>spring-boot-loader-debug</module>
-        <module>spring-boot-log4j2</module>
-        <module>spring-boot-freemarker</module>
-        <module>spring-boot-mongodb</module>
-        <module>spring-boot-batch</module>
-        <module>spring-boot-redis</module>
-        <module>spring-boot-mvc</module>
         <module>spring-boot-war</module>
-        <module>spring-boot-rest</module>
-        <module>spring-boot-security</module>
-        <module>spring-boot-dev-tools</module>
-        <module>spring-aop</module>
+        <module>spring-boot-websocket</module>
+        <module>spring-session</module>
+        <module>spring-shiro-cas</module>
     </modules>
 
     <dependencies>
