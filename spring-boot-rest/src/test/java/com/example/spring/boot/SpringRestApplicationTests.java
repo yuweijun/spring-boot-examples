@@ -17,7 +17,10 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.WebApplicationContext;
+
+import java.util.Map;
 
 /**
  * Integration test to run the application.
@@ -33,6 +36,9 @@ public class SpringRestApplicationTests {
 
     @Autowired
     private WebApplicationContext context;
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     private MockMvc mvc;
 
@@ -58,5 +64,15 @@ public class SpringRestApplicationTests {
         this.mvc.perform(
                 get("/api/cities/search/findByNameContainingAndCountryContainingAllIgnoringCase?name=&country=UK"))
                 .andExpect(status().isOk()).andExpect(jsonPath("_embedded.cities", hasSize(3)));
+    }
+
+    @Test
+    public void testCase1() {
+        Map map = restTemplate.getForObject("https://httpbin.org/get", Map.class);
+        System.out.println();
+        System.out.println("===================================================");
+        System.out.println(map);
+        System.out.println("===================================================");
+        System.out.println();
     }
 }

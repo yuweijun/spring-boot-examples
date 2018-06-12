@@ -2,10 +2,15 @@ package com.example.spring.boot;
 
 import org.assertj.core.util.Lists;
 import org.junit.Test;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.*;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -56,6 +61,22 @@ public class RestTemplateTest {
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> resp = restTemplate.exchange("https://httpbin.org/delete", HttpMethod.DELETE, requestEntity, String.class);
+
+        String body = resp.getBody();
+        System.out.println(body);
+    }
+
+    @Test
+    public void testCase5() throws URISyntaxException {
+        MultiValueMap<String, Object> multiPartBody = new LinkedMultiValueMap<>();
+        multiPartBody.add("file", new ClassPathResource("logback-test.xml"));
+        RequestEntity<MultiValueMap<String, Object>> requestEntity = RequestEntity
+                .post(new URI("https://httpbin.org/post"))
+                .contentType(MediaType.MULTIPART_FORM_DATA)
+                .body(multiPartBody);
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> resp = restTemplate.exchange(requestEntity, String.class);
 
         String body = resp.getBody();
         System.out.println(body);
