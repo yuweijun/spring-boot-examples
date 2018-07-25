@@ -20,7 +20,7 @@ import java.util.Properties;
  */
 @Configuration
 @EnableTransactionManagement
-public class MybatisConfig  {
+public class MybatisConfig {
 
     @Autowired
     private DataSource dataSource;
@@ -32,7 +32,7 @@ public class MybatisConfig  {
      * @return
      */
     @Bean(name = "sqlSessionFactory")
-    public SqlSessionFactory sqlSessionFactory() {
+    public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setTypeAliasesPackage("com.example.spring.jdbc.model");
@@ -50,8 +50,8 @@ public class MybatisConfig  {
         // 该参数默认为false
         // 设置为true时，使用RowBounds分页会进行count查询
         properties.setProperty("rowBoundsWithCount", "true");
-
         properties.setProperty("pageSizeZero", "true");
+
         // 3.3.0版本可用 - 分页参数合理化，默认false禁用
         // 启用合理化时，如果pageNum<1会查询第一页，如果pageNum>pages会查询最后一页
         // 禁用合理化时，如果pageNum<1或pageNum>pages会返回空数据
@@ -63,13 +63,8 @@ public class MybatisConfig  {
 
         //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        try {
-            sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:mybatis/*.xml"));
-            return sqlSessionFactoryBean.getObject();
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+        sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:mybatis/*.xml"));
+        return sqlSessionFactoryBean.getObject();
     }
 
     @Bean

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.stream.IntStream;
 
 @Service
 public class PeopleJdbcService {
@@ -47,5 +48,20 @@ public class PeopleJdbcService {
     public long insertBatch(List<People> list) {
         return peopleJdbcDao.insertBatch(list);
     }
+
+    public List<People> execute() {
+        IntStream.range(0, 10).forEach(i -> {
+            peopleJdbcDao.findAll();
+            LOGGER.info("loop for : {}", i);
+        });
+
+        return peopleJdbcDao.findAll();
+    }
+
+    @Transactional
+    public List<People> useTransactions() {
+        return execute();
+    }
+
 
 }

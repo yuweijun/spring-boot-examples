@@ -13,32 +13,47 @@ import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.IntStream;
 
 @Service
 public class PeopleJpaService {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(PeopleJpaService.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(PeopleJpaService.class);
 
-	@Resource
-	private PeopleJpaDao peopleJpaDao;
+    @Resource
+    private PeopleJpaDao peopleJpaDao;
 
-	public List<People> findAll() {
-		return peopleJpaDao.findAll();
-	}
+    public List<People> findAll() {
+        return peopleJpaDao.findAll();
+    }
 
-	// PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-	@Transactional
-	@CachePut("peopleJpa")
-	@CacheEvict(value = { "peopleJpa"}, allEntries = true)
-	public void save(People people) {
-		peopleJpaDao.save(people);
-	}
+    // PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+    @Transactional
+    @CachePut("peopleJpa")
+    @CacheEvict(value = {"peopleJpa"}, allEntries = true)
+    public void save(People people) {
+        peopleJpaDao.save(people);
+    }
 
-	@Cacheable("peopleJpa")
-	public Collection<People> findByFullName(String fullName) {
-		LOGGER.info("find from database for : {}", fullName);
-		Collection<People> all = peopleJpaDao.findByFullName(fullName);
-		return all;
-	}
+    @Cacheable("peopleJpa")
+    public Collection<People> findByFullName(String fullName) {
+        LOGGER.info("find from database for : {}", fullName);
+        Collection<People> all = peopleJpaDao.findByFullName(fullName);
+        return all;
+    }
+
+    public List<People> execute() {
+        IntStream.range(0, 10).forEach(i -> {
+            peopleJpaDao.findAll();
+            LOGGER.info("loop for : {}", i);
+        });
+
+        return peopleJpaDao.findAll();
+    }
+
+    @Transactional
+    public List<People> useTransactions() {
+        return execute();
+    }
 
 }

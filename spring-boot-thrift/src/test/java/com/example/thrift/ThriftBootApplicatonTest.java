@@ -2,7 +2,6 @@ package com.example.thrift;
 
 import com.example.thrift.protocol.TCalculatorService;
 import com.example.thrift.protocol.TOperation;
-import com.example.thrift.util.SpringBootTransactionalTest;
 import com.facebook.nifty.client.HttpClientConnector;
 import com.facebook.swift.codec.ThriftCodecManager;
 import com.facebook.swift.service.ThriftClientManager;

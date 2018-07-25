@@ -3,7 +3,7 @@ spring:
   jpa:
     showSql: true
   datasource:
-    url: jdbc:mysql://localhost/jdbc
+    url: jdbc:mysql://localhost/jdbc?useSSL=false
     username: dbuser
     password: dbpass
     tomcat:
@@ -17,3 +17,5 @@ spring:
       testWhileIdle: true
       testOnBorrow: false
       testOnReturn: false
+      logAbandoned: true
+      removeAbandoned: true

@@ -2,11 +2,7 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <logger name="com.example" level="DEBUG"/>
+    <logger name="org.apache.tomcat.jdbc" level="DEBUG"/>
     <logger name="org.springframework.transaction" level="DEBUG"/>
-    <logger name="org.springframework.orm.jpa" level="DEBUG"/>
+    <logger name="org.springframework.orm.jpa.JpaTransactionManager" level="DEBUG" />
 </configuration>
-<!--
-When possible we recommend that you use the -spring variants for your logging configuration (for example logback-spring.xml rather than logback.xml). If you use standard configuration locations, Spring cannot completely control log initialization.
-[Warning]
-There are known classloading issues with Java Util Logging that cause problems when running from an ‘executable jar’. We recommend that you avoid it if at all possible.
--->
