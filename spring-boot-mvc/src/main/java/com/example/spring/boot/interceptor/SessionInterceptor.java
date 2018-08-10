@@ -44,9 +44,6 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
             if (url.contains("favicon.ico")) {
                 LOGGER.warn("request favicon.ico without session");
                 return true;
-            } else if (url.contains("/static/")) {
-                LOGGER.warn("request /static/ without session");
-                return true;
             }
             session = request.getSession(true);
         }
