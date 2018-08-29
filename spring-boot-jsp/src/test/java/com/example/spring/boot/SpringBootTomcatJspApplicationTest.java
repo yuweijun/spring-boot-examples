@@ -2,7 +2,10 @@ package com.example.spring.boot;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -24,11 +27,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DirtiesContext
 public class SpringBootTomcatJspApplicationTest {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(SpringBootTomcatJspApplicationTest.class);
+
+    @LocalServerPort
+    private int port;
+
     @Autowired
     private TestRestTemplate restTemplate;
 
     @Test
     public void testJspWithEl() {
+        LOGGER.info("port is : {}", port);
         ResponseEntity<String> entity = this.restTemplate.getForEntity("/hello", String.class);
         assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(entity.getBody()).contains("Hello world");
