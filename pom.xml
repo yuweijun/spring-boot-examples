@@ -47,6 +47,7 @@
         <module>spring-boot-websocket</module>
         <module>spring-session</module>
         <module>spring-shiro-cas</module>
+        <module>spring-boot-neo4j</module>
     </modules>
 
     <dependencies>
