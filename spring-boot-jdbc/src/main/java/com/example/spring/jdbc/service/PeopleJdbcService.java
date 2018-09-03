@@ -6,10 +6,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
-import javax.transaction.Transactional;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 @Service
@@ -63,5 +65,16 @@ public class PeopleJdbcService {
         return execute();
     }
 
+    @Transactional(timeout = 15)
+    public void executeTransactionTimeout() {
+        LOGGER.info("test transactional timeout");
+        People one = peopleJdbcDao.findByFullName("test.yu");
+        long dateTime = new Date().getTime();
+        one.setJobTitle("test dateTime is " + dateTime);
+        peopleJdbcDao.save(one);
+        // JdbcTemplate 只要最后一个SQL在事务时间内完成就可以，下面的延时不会导致事务失败
+        try { TimeUnit.SECONDS.sleep(20); } catch (InterruptedException e) { e.printStackTrace(); }
+        LOGGER.info("execute finished at " + dateTime);
+    }
 
 }

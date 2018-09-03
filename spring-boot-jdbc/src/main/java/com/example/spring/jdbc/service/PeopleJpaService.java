@@ -8,11 +8,13 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import javax.transaction.Transactional;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 @Service
@@ -54,6 +56,18 @@ public class PeopleJpaService {
     @Transactional
     public List<People> useTransactions() {
         return execute();
+    }
+
+    @Transactional(timeout = 15)
+    public void executeTransactionTimeout(long timeout) {
+        LOGGER.info("test transactional timeout");
+        People one = peopleJpaDao.getOne(1);
+        long dateTime = new Date().getTime();
+        one.setJobTitle("test dateTime is " + dateTime);
+        peopleJpaDao.save(one);
+        // JPA 这里的延时会导致事务失败回滚，Transactional的timeout应该要包含下面的延时时间
+        try { TimeUnit.SECONDS.sleep(timeout); } catch (InterruptedException e) { e.printStackTrace(); }
+        LOGGER.info("execute finished at " + dateTime);
     }
 
 }

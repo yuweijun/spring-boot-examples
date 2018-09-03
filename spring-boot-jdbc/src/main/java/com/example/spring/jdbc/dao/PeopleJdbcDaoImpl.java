@@ -25,10 +25,14 @@ public class PeopleJdbcDaoImpl implements PeopleJdbcDao {
 
     @Override
     public int save(People people) {
-        String sql = "insert into people (full_name, job_title) values (:fullName, :jobTitle)";
         BeanPropertySqlParameterSource sqlParameterSource = new BeanPropertySqlParameterSource(people);
-        int saved = namedParameterJdbcTemplate.update(sql, sqlParameterSource);
-        return saved;
+        if (people.getId() == 0) {
+            String sql = "insert into people (full_name, job_title) values (:fullName, :jobTitle)";
+            return namedParameterJdbcTemplate.update(sql, sqlParameterSource);
+        } else {
+            String sql = "update people set full_name = :fullName, job_title = :jobTitle where id = :id";
+            return namedParameterJdbcTemplate.update(sql, sqlParameterSource);
+        }
     }
 
     @Override
