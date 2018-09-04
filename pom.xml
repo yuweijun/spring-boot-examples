@@ -48,6 +48,7 @@
         <module>spring-session</module>
         <module>spring-shiro-cas</module>
         <module>spring-boot-neo4j</module>
+        <module>spring-boot-sharding-jdbc</module>
     </modules>
 
     <dependencies>
