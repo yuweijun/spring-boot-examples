@@ -1,20 +1,3 @@
-/*
- * Copyright 2016-2018 shardingsphere.io.
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * </p>
- */
-
 package com.example.spring.boot.sharding.jpa.entity;
 
 import javax.persistence.Column;
@@ -29,7 +12,7 @@ import java.io.Serializable;
 @Table(name = "t_order_item")
 public class OrderItem implements Serializable {
     
-    private static final long serialVersionUID = 261534701950670670L;
+    private static final long serialVersionUID = 1L;
     
     @Id
     @Column(name = "order_item_id")
@@ -40,7 +23,7 @@ public class OrderItem implements Serializable {
     private long orderId;
     
     @Column(name = "user_id")
-    private int userId;
+    private long userId;
     
     public long getOrderItemId() {
         return orderItemId;
@@ -58,11 +41,11 @@ public class OrderItem implements Serializable {
         this.orderId = orderId;
     }
     
-    public int getUserId() {
+    public long getUserId() {
         return userId;
     }
     
-    public void setUserId(final int userId) {
+    public void setUserId(final long userId) {
         this.userId = userId;
     }
     
