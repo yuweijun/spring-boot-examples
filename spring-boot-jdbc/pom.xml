@@ -119,7 +119,7 @@
                     <changeLogFile>db/db.changelog.master.xml</changeLogFile>
                     <outputChangeLogFile>${basedir}/logs/liquibase.sql</outputChangeLogFile>
                     <driver>com.mysql.jdbc.Driver</driver>
-                    <url>jdbc:mysql://localhost/test?useUnicode=true&amp;characterEncoding=UTF-8</url>
+                    <url>jdbc:mysql://localhost/jdbc?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8</url>
                     <username>dbuser</username>
                     <password>dbpass</password>
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
