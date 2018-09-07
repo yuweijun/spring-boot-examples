@@ -49,6 +49,7 @@
         <module>spring-shiro-cas</module>
         <module>spring-boot-neo4j</module>
         <module>spring-boot-sharding-jdbc</module>
+        <module>spring-boot-mycat</module>
     </modules>
 
     <dependencies>
