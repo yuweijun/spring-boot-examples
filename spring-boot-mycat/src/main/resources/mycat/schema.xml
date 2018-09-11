@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+
+    <schema name="dbtest" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="tb1" primaryKey="id" type="global" dataNode="dn1,dn2,dn3,dn4,dn5" />
+        <table name="tb2" dataNode="dn1,dn2,dn3" rule="mod-long" />
+        <table name="tb3" dataNode="dn1,dn2,dn3" rule="mod-long" />
+        <table name="user" dataNode="dn1,dn2,dn3,dn4,dn5" rule="mod-long-age" />
+    </schema>
+    
+    <dataNode name="dn1" dataHost="localhost1" database="dbtest1" />
+    <dataNode name="dn2" dataHost="localhost1" database="dbtest2" />
+    <dataNode name="dn3" dataHost="localhost1" database="dbtest3" />
+    <dataNode name="dn4" dataHost="localhost1" database="dbtest4" />
+    <dataNode name="dn5" dataHost="localhost1" database="dbtest5" />
+    
+    <dataHost name="localhost1" maxCon="1000" minCon="10" balance="0"
+        writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+        <heartbeat>select user()</heartbeat>
+        <writeHost host="host1" url="localhost:3306" user="dbuser" password="dbpass"/>
+    </dataHost>
+</mycat:schema>
