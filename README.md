@@ -1,7 +1,3 @@
-## jrebel generate
-
-    $> mvn org.zeroturnaround:jrebel-maven-plugin:generate
-
 ## debug spring boot v1.x using maven
 
 > By default, the run goal runs in the same process unless jvm arguments or an agent have been specified. You can enable or disable forking explicitly using the fork attribute.
