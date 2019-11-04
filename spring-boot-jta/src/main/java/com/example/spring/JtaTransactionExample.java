@@ -50,7 +50,7 @@ public class JtaTransactionExample implements CommandLineRunner {
 
         atomikosTransactionService.test();
 
-        atomikosTransactionService.xaProramming();
+        atomikosTransactionService.xaProgramming();
 
         atomikosTransactionService.testPlatformTransactionManager();
 

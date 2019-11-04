@@ -96,7 +96,7 @@ public class AtomikosTransactionService {
     /**
      * 编程式事务模型:手动提交或者回滚事务，不用加 @{@link Transactional}
      */
-    public void xaProramming() throws SQLException, SystemException, HeuristicRollbackException, RollbackException,
+    public void xaProgramming() throws SQLException, SystemException, HeuristicRollbackException, RollbackException,
             NotSupportedException, HeuristicMixedException {
         LOGGER.info("xa programming");
         Connection conn = null;
@@ -107,9 +107,10 @@ public class AtomikosTransactionService {
             tx.begin();                                                     // 2. 开启JTA事务
             conn = getDataSource().getConnection();                         // 3. 获取JDBC
             String sql = "select * from test";                              // 4. 声明SQL
-            PreparedStatement pstmt = conn.prepareStatement(sql);           // 5. 预编译SQL
-            ResultSet rs = pstmt.executeQuery();                            // 6. 执行SQL
+            PreparedStatement ps= conn.prepareStatement(sql);               // 5. 预编译SQL
+            ResultSet rs = ps.executeQuery();                               // 6. 执行SQL
             process(rs);                                                    // 7. 处理结果集
+
             closeResultSet(rs);                                             // 8. 释放结果集
             tx.commit();                                                    // 9. 提交事务
             LOGGER.info("commit transaction");
@@ -150,19 +151,20 @@ public class AtomikosTransactionService {
      * 编程式事务模型:下面代码中不用加 annotation: @{@link Transactional}，事务通过代码手工提交或者回滚
      */
     public void testPlatformTransactionManager() {
-        DefaultTransactionDefinition def = new DefaultTransactionDefinition();
+        DefaultTransactionDefinition transactionDefinition = new DefaultTransactionDefinition();
         LOGGER.info("Creating new transaction with name ......");
-        def.setName("transactionNameX");
-        def.setIsolationLevel(TransactionDefinition.ISOLATION_READ_COMMITTED);
-        def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
-        TransactionStatus status = jtaTransactionManager.getTransaction(def);
+        transactionDefinition.setName("transactionNameX");
+        transactionDefinition.setIsolationLevel(TransactionDefinition.ISOLATION_READ_COMMITTED);
+        transactionDefinition.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
+        TransactionStatus transactionStatus = jtaTransactionManager.getTransaction(transactionDefinition);
         try {
             jdbcTemplate1.update(INSERT_SQL, "test jdbc insert");
             jdbcTemplate2.update(INSERT_SQL, "test jdbc insert");
-            jtaTransactionManager.commit(status);
+            jtaTransactionManager.commit(transactionStatus);
         } catch (RuntimeException e) {
-            jtaTransactionManager.rollback(status);
+            jtaTransactionManager.rollback(transactionStatus);
         }
+
         // 不能执行创建表语句和删除表语句
         // jdbcTemplate1.execute(DROP_TABLE_SQL);
         LOGGER.info("StatementCallback; uncategorized SQLException for SQL [drop table if exists test];");
