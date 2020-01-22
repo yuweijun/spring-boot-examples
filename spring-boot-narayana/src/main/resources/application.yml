@@ -1,0 +1,40 @@
+endpoints:
+  beans:
+    sensitive: false
+
+spring:
+  jta:
+    logDir: ./target/tx-object-store
+    narayana:
+      recoveryDbUser: sa
+      recoveryDbPass:
+  artemis:
+    mode: embedded
+    embedded:
+      queues: updates
+  datasource:
+    primary:
+      url: jdbc:h2:mem:db1
+      username: sa
+      password:
+      driverClassName: org.h2.Driver
+    secondary:
+      url: jdbc:h2:mem:db2
+      username: sa
+      password:
+      driverClassName: org.h2.Driver
+  jpa:
+    showSql: true
+    hibernate:
+      ddlAuto: update
+    properties:
+      hibernate:
+        format_sql: true
+logging:
+  level:
+    root: WARN
+  com:
+    example:
+      spring:
+        jdbc:
+          mapper: TRACE

@@ -36,7 +36,7 @@ public class StockMarketApplication implements CommandLineRunner {
         userRepository.deleteAll();
         User user = new User();
         user.setUsername("username");
-        user.setBudget(12);
+        user.setBudget(32);
         userRepository.save(user);
         LOGGER.info("user : {}", user);
     }
@@ -46,7 +46,7 @@ public class StockMarketApplication implements CommandLineRunner {
         Share share = new Share();
         share.setSymbol("symbol");
         share.setPrice(3);
-        share.setAmount(33);
+        share.setAmount(300);
         shareRepository.save(share);
         LOGGER.info("share : {}", share);
     }
