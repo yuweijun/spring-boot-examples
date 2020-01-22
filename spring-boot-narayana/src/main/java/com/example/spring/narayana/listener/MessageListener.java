@@ -14,8 +14,13 @@ public class MessageListener {
     private static final Logger LOGGER = LoggerFactory.getLogger(MessageListener.class);
 
     @JmsListener(destination = "updates")
-    public void onMessage(String content) {
-        LOGGER.info("----> " + content);
+    public void onUpdate(String content) {
+        LOGGER.info("update ----> " + content);
+    }
+
+    @JmsListener(destination = "query")
+    public void onQuery(String content) {
+        LOGGER.info("query ----> " + content);
     }
 
 }
