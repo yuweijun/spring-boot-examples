@@ -28,6 +28,7 @@
         <module>spring-boot-dev-tools</module>
         <module>spring-boot-freemarker</module>
         <module>spring-boot-info</module>
+        <module>spring-boot-narayana</module>
         <module>spring-boot-jdbc</module>
         <module>spring-boot-jersey</module>
         <module>spring-boot-jsp</module>
