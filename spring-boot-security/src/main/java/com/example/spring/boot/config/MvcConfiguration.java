@@ -174,7 +174,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
      * }
      * 1. There are multiple children to the http.authorizeRequests() method each matcher is considered in the order they were declared.
      * 2. We specified multiple URL patterns that any user can access. Specifically, any user can access a request if the URL starts with "/resources/", equals "/signup", or equals "/about".
-     * 3. Any URL that starts with "/admin/" will be resticted to users who have the role "ROLE_ADMIN". You will notice that since we are invoking the hasRole method we do not need to specify the "ROLE_" prefix.
+     * 3. Any URL that starts with "/admin/" will be restricted to users who have the role "ROLE_ADMIN". You will notice that since we are invoking the hasRole method we do not need to specify the "ROLE_" prefix.
      * 4. Any URL that starts with "/db/" requires the user to have both "ROLE_ADMIN" and "ROLE_DBA". You will notice that since we are using the hasRole expression we do not need to specify the "ROLE_" prefix.
      * 5. Any URL that has not already been matched on only requires that the user be authenticated
      * </code>
@@ -190,7 +190,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
      * </pre>
      */
     @Configuration
-    @EnableGlobalMethodSecurity(prePostEnabled = true)
+    @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
     @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
     protected static class ApplicationSecurity extends WebSecurityConfigurerAdapter {
 

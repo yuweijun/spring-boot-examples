@@ -22,7 +22,6 @@ import java.util.Arrays;
 
 @EnableAutoConfiguration
 @ComponentScan
-@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class SpringBootSecurityApplication implements CommandLineRunner {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SpringBootSecurityApplication.class);

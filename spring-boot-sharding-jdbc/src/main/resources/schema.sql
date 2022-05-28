@@ -5,6 +5,10 @@
 -- grant all on ds0.* to 'dbuser'@'%' identified by 'dbpass';
 -- grant all on ds1.* to 'dbuser'@'%' identified by 'dbpass';
 
+--mysql> CREATE USER 'dbuser'@'%' IDENTIFIED BY 'dbpass';
+--mysql> GRANT ALL PRIVILEGES ON *.* TO 'dbuser'@'%' WITH GRANT OPTION;
+--mysql> FLUSH PRIVILEGES;
+
 --DROP TABLE IF EXISTS `t_user`;
 --DROP TABLE IF EXISTS `t_order`;
 --DROP TABLE IF EXISTS `t_order_item`;
