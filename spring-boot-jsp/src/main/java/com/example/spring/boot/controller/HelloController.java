@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HelloController {
 
     @RequestMapping("/hello")
-    public String index(@ModelAttribute("time") String time, Model model) {
+    public String index(@ModelAttribute("map") Map<String, Integer> map, String time, Model model) {
+        System.out.println(map);
         System.out.println("index");
         System.out.println("time is " + time);
         model.addAttribute("hello", "yu");
