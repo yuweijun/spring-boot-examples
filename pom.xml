@@ -24,13 +24,11 @@
         <module>spring-boot-application-listener</module>
         <module>spring-boot-auto-configuration</module>
         <module>spring-boot-batch</module>
-        <module>spring-boot-cas-client</module>
         <module>spring-boot-dev-tools</module>
         <module>spring-boot-freemarker</module>
         <module>spring-boot-info</module>
         <module>spring-boot-narayana</module>
         <module>spring-boot-jdbc</module>
-        <module>spring-boot-jersey</module>
         <module>spring-boot-jsp</module>
         <module>spring-boot-jta</module>
         <module>spring-boot-loader-debug</module>
@@ -43,12 +41,10 @@
         <module>spring-boot-security</module>
         <module>spring-boot-shiro</module>
         <module>spring-boot-swagger</module>
-        <module>spring-boot-thrift</module>
         <module>spring-boot-war</module>
         <module>spring-boot-websocket</module>
         <module>spring-session</module>
         <module>spring-shiro-cas</module>
-        <module>spring-boot-neo4j</module>
         <module>spring-boot-sharding-jdbc</module>
         <module>spring-boot-mycat</module>
     </modules>
